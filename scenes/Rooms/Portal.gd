@@ -1,6 +1,7 @@
 extends Area2D
 
-var collectible = false
+
+var next_scene = preload("res://scenes/Interactable/Helmet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,10 +13,7 @@ func _ready():
 #	pass
 
 
-func _on_Interactable_input_event(_viewport, event, _shape_idx):
+func _on_Portal_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
-		print("Interactable pressed")
-		# add Helmet to inventory
-		if collectible:
-			$".".set_visible(false)
-			#$PopupDialog.popup(0, 20, 20, 40)
+		get_tree().change_scene_to(next_scene)
+	pass # Replace with function body.

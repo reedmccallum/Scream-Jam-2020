@@ -12,7 +12,8 @@ height = 87.0
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="0"]
+visible = true
 shape = SubResource( 1 )
 
-[node name="Sprite" parent="CollisionShape2D" index="0"]
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource( 2 )
