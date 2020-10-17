@@ -21,4 +21,5 @@ func _on_Helmet_input_event(_viewport, event, _shape_idx):
 		print("Helmet pressed")
 		# add Helmet to inventory
 		$Helmet.set_visible(false)
+		$Helmet/PopupDialog.popup(0, 20, 20, 40)
 	pass # Replace with function body.
