@@ -1,5 +1,6 @@
 extends Area2D
 
+onready var inventory = $"res://user_interface/UI.tscn"
 var collectible = false
 
 # Called when the node enters the scene tree for the first time.

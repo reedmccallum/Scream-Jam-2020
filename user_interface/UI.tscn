@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://user_interface/ItemList.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/ui/diving_helm_ui.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="."]
+material = SubResource( 1 )
+margin_top = 288.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_clip_content = false
+max_columns = 5
+fixed_column_width = 60
+fixed_icon_size = Vector2( 60, 60 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="ItemList"]
+visible = false
+texture = ExtResource( 2 )
