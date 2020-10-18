@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Rooms/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/bgs/test_bg.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Rooms/Portal.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Interactable/Helmet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Inventory/Coin.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -14,10 +14,10 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Helmet" parent="." instance=ExtResource( 4 )]
-position = Vector2( 532.6, 278.981 )
-rotation = 0.499606
-scale = Vector2( 0.531375, 0.531375 )
+[node name="Coin" parent="." instance=ExtResource( 4 )]
+position = Vector2( 531.265, 273.642 )
+rotation = 0.466542
+scale = Vector2( 0.523883, 0.523883 )
 
 [node name="Portal" type="Area2D" parent="."]
 script = ExtResource( 3 )

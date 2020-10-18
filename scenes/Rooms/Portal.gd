@@ -1,7 +1,7 @@
 extends Area2D
 
 
-onready var _next_scene = preload("res://scenes/Interactable/Helmet.tscn")
+onready var _next_scene = preload("res://scenes/Inventory/Coin.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
