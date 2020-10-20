@@ -26,4 +26,5 @@ script = ExtResource( 3 )
 position = Vector2( 72.0812, 201.56 )
 scale = Vector2( 7.29377, 13.3033 )
 shape = SubResource( 1 )
+[connection signal="input_event" from="Coin" to="." method="_on_Coin_input_event"]
 [connection signal="input_event" from="Portal" to="Portal" method="_on_Portal_input_event"]

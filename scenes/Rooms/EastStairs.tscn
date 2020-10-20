@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Rooms/EastStairs.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/bgs/stairwell_east.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/ui/back.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 24 )
+
+[node name="EastStairs" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="back" type="Area2D" parent="."]
+position = Vector2( 616, 336 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back"]
+shape = SubResource( 1 )
+
+[node name="back_button" type="Sprite" parent="back"]
+texture = ExtResource( 3 )
+[connection signal="input_event" from="back" to="." method="_on_back_input_event"]

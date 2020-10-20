@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/art/bgs/stairwell_west.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Rooms/WestStairs.gd" type="Script" id=2]
+[ext_resource path="res://assets/art/ui/back.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.7597, 138.004 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 101.95, 136.743 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 24 )
+
+[node name="WestStairs" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="to_lab_door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_lab_door"]
+position = Vector2( 433.822, 216.244 )
+scale = Vector2( -4.86659, 0.620185 )
+shape = SubResource( 1 )
+
+[node name="to_vault_door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_vault_door"]
+position = Vector2( 171.527, 136.153 )
+shape = SubResource( 2 )
+
+[node name="back" type="Area2D" parent="."]
+position = Vector2( 616, 336 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back"]
+shape = SubResource( 3 )
+
+[node name="back_button" type="Sprite" parent="back"]
+texture = ExtResource( 3 )
+[connection signal="input_event" from="to_lab_door" to="." method="_on_to_lab_door_input_event"]
+[connection signal="input_event" from="to_vault_door" to="." method="_on_to_vault_door_input_event"]
+[connection signal="input_event" from="back" to="." method="_on_back_input_event"]

@@ -3,30 +3,17 @@
 [ext_resource path="res://assets/art/ui/ui_box.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/ui/diving_helm_ui.png" type="Texture" id=2]
 [ext_resource path="res://user_interface/Inventory.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Rooms/Test.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/art/ui/eyeball_ui.png" type="Texture" id=4]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 0.749146
-margin_bottom = 0.749146
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-visible = false
-margin_right = 640.0
-margin_bottom = 360.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Scene" parent="." instance=ExtResource( 4 )]
 
 [node name="Inventory" type="Node2D" parent="."]
-visible = false
-position = Vector2( 608, 328 )
+position = Vector2( 32, 328 )
 script = ExtResource( 3 )
 
 [node name="Coin" type="Sprite" parent="Inventory"]
@@ -35,18 +22,14 @@ texture = ExtResource( 2 )
 
 [node name="Arm" type="Sprite" parent="Inventory"]
 visible = false
-rotation = 1.5708
 texture = ExtResource( 2 )
 
 [node name="Sun" type="Sprite" parent="Inventory"]
 visible = false
-rotation = 3.14159
 texture = ExtResource( 2 )
 
 [node name="Eye" type="Sprite" parent="Inventory"]
-visible = false
-rotation = 4.71239
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="Item" type="Sprite" parent="Inventory"]
 
