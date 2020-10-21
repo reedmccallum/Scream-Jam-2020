@@ -1,30 +1,27 @@
 extends Node2D
 
-onready var _west_stairs = preload("res://scenes/Rooms/WestStairs.tscn")
-onready var _east_stairs = preload("res://scenes/Rooms/EastStairs.tscn")
-onready var _vent = preload("res://scenes/Rooms/Maze/A.tscn")
-onready var _engine = preload("res://scenes/Rooms/Engine.tscn")
-
-var _vent_open = false
-var _maze_complete = false
+onready var _west_stairs = "res://scenes/Rooms/WestStairs.tscn"
+onready var _east_stairs = "res://scenes/Rooms/EastStairs.tscn"
+onready var _vent = "res://scenes/Rooms/Maze/A.tscn"
+onready var _engine = "res://scenes/Rooms/Engine.tscn"
 
 func _ready():
 	pass
 
-func _on_to_west_stairs_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
+func _on_to_west_stairs_input_event(_viewport, _event, _shape_idx):
+	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
-		get_tree().change_scene_to(_west_stairs)
+		get_tree().change_scene(_west_stairs)
 
-func _on_to_east_stairs_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
+func _on_to_east_stairs_input_event(_viewport, _event, _shape_idx):
+	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
-		get_tree().change_scene_to(_east_stairs)
+		get_tree().change_scene(_east_stairs)
 
-func _on_to_vent_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
+func _on_to_vent_input_event(_viewport, _event, _shape_idx):
+	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
-		if _maze_complete:
-			get_tree().change_scene_to(_engine)
-		 elif _vent_open:
-			get_tree().change_scene_to(_vent)
+		if GameState.has_sun:
+			get_tree().change_scene(_engine)
+		elif GameState.vent_open:
+			get_tree().change_scene(_vent)

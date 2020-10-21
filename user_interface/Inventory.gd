@@ -1,13 +1,5 @@
 extends Node2D
 
-enum State {
-	NONE,
-	COIN,
-	ARM,
-	SUN,
-	EYE
-}
-
 onready var coin = $Coin
 onready var arm = $Arm
 onready var sun = $Sun

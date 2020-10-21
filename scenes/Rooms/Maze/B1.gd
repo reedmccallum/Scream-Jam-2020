@@ -1,30 +1,30 @@
 extends Node2D
 
-#onready var _to_front = preload("res://scenes/Rooms/Maze/C.tscn")
-onready var _to_left = preload("res://scenes/Rooms/Maze/B2.tscn")
-#onready var _to_right = preload("res://scenes/Rooms/Maze/B.tscn")
-onready var _to_back = preload("res://scenes/Rooms/Maze/B.tscn")
+#onready var _to_front = "res://scenes/Rooms/Maze/C.tscn"
+onready var _to_left = "res://scenes/Rooms/Maze/B2.tscn"
+#onready var _to_right = "res://scenes/Rooms/Maze/B.tscn"
+onready var _to_back = "res://scenes/Rooms/Maze/B.tscn"
 
-func _on_to_front_input_event(viewport, event, shape_idx):
-#	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
+func _on_to_front_input_event(_viewport, _event, _shape_idx):
+#	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 #		print("portal clicked")
-#		get_tree().change_scene_to(_to_front)
+#		get_tree().change_scene(_to_front)
 	pass
 
-func _on_to_left_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
+func _on_to_left_input_event(_viewport, _event, _shape_idx):
+	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
-		get_tree().change_scene_to(_to_left)
+		get_tree().change_scene(_to_left)
 	pass
 
-func _on_to_right_input_event(viewport, event, shape_idx):
-#	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
+func _on_to_right_input_event(_viewport, _event, _shape_idx):
+#	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 #		print("portal clicked")
-#		get_tree().change_scene_to(_to_right)
+#		get_tree().change_scene(_to_right)
 	pass
 
-func _on_back_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed:
+func _on_back_input_event(_viewport, _event, _shape_idx):
+	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
-		get_tree().change_scene_to(_to_back)
+		get_tree().change_scene(_to_back)
 	pass
