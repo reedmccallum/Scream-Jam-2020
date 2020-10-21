@@ -25,6 +25,4 @@ shape = SubResource( 1 )
 texture = ExtResource( 3 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0.772549 )
-position = Vector2( 0.707123, 0.707108 )
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]
