@@ -5,26 +5,34 @@
 [ext_resource path="res://user_interface/Inventory.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/ui/eyeball_ui.png" type="Texture" id=4]
 
-[node name="Inventory" type="Node2D"]
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="Node2D" parent="."]
 position = Vector2( 32, 328 )
 script = ExtResource( 3 )
 
-[node name="Coin" type="Sprite" parent="."]
+[node name="Coin" type="Sprite" parent="Inventory"]
 visible = false
 texture = ExtResource( 2 )
 
-[node name="Arm" type="Sprite" parent="."]
+[node name="Arm" type="Sprite" parent="Inventory"]
 visible = false
 texture = ExtResource( 2 )
 
-[node name="Sun" type="Sprite" parent="."]
+[node name="Sun" type="Sprite" parent="Inventory"]
 visible = false
 texture = ExtResource( 2 )
 
-[node name="Eye" type="Sprite" parent="."]
+[node name="Eye" type="Sprite" parent="Inventory"]
+visible = false
 texture = ExtResource( 4 )
 
-[node name="Item" type="Sprite" parent="."]
+[node name="Item" type="Sprite" parent="Inventory"]
 
-[node name="UI Box" type="Sprite" parent="."]
+[node name="UI Box" type="Sprite" parent="Inventory"]
 texture = ExtResource( 1 )
