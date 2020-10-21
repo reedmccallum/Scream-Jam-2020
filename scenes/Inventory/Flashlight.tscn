@@ -17,3 +17,5 @@ scale = Vector2( 10.9782, 6.93674 )
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -2, -2 )
+
+[node name="Tween" type="Tween" parent="."]
