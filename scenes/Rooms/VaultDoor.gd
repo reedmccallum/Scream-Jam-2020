@@ -19,21 +19,19 @@ func _on_to_vault_input_event(_viewport, _event, _shape_idx):
 #		if  GameState.vault_open:
 		if  Globals.vault_open:
 			flashlight.on_exit()
-			get_tree().change_scene(_to_vault)
+			if get_tree().change_scene(_to_vault) != OK:
+				print("Error on scene change to %s" % _to_vault)
 
 func _on_screen_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("screen clicked")
-#		if GameState.has_power:
 		if Globals.has_power:
-#			GameState.vault_open = true
 			Globals.vault_open = true
 			Sound.play_vault_open()
 			$background_open.set_visible(true)
 
 func _on_coin_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
-#		GameState.has_coin = true
 		Globals.has_coin = true
 		print("coin gathered")
 		Sound.play_coin()
@@ -43,4 +41,5 @@ func _on_back_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
 		flashlight.on_exit()
-		get_tree().change_scene(_to_west_stairs)
+		if get_tree().change_scene(_to_west_stairs) != OK:
+			print("Error on scene change to %s" % _to_west_stairs)

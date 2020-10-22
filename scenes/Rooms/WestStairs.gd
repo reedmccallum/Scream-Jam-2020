@@ -12,16 +12,19 @@ func _on_to_lab_door_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
 		flashlight.on_exit()
-		get_tree().change_scene(_to_lab_door)
+		if get_tree().change_scene(_to_lab_door) != OK:
+			print("Error on scene change to %s" % _to_lab_door)
 
 func _on_to_vault_door_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
 		flashlight.on_exit()
-		get_tree().change_scene(_to_vault_door)
+		if get_tree().change_scene(_to_vault_door) != OK:
+			print("Error on scene change to %s" % _to_vault_door)
 
 func _on_back_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
 		flashlight.on_exit()
-		get_tree().change_scene(_to_observatory)
+		if get_tree().change_scene(_to_observatory) != OK:
+			print("Error on scene change to %s" % _to_observatory)
