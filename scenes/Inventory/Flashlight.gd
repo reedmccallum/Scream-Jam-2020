@@ -1,6 +1,7 @@
 extends Node2D
 
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,7 +16,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		target = get_global_mouse_position()
+		target = get_viewport().get_mouse_position()
 	light_chase()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,3 +33,4 @@ func on_enter():
 func on_exit():
 	tween.interpolate_property(obscure, "modulate", Color(1,1,1,1), Color(1,1,1,2),0.5, Tween.TRANS_EXPO, Tween.EASE_IN_OUT)
 	tween.start()
+

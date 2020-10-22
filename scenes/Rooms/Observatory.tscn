@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Rooms/Observatory.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/bgs/observatory.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/art/bgs/observatory_vent_open.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 53.8958, 70.0008 )
+extents = Vector2( 40, 120 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 62.5723, 47.976 )
+extents = Vector2( 40, 120 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 54.5632, 33.2928 )
+extents = Vector2( 90, 20 )
 
 [node name="Observatory" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,29 +23,28 @@ centered = false
 
 [node name="background_open" type="Sprite" parent="."]
 visible = false
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="to_west_stairs" type="Area2D" parent="."]
+position = Vector2( 40, 200 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_west_stairs"]
-position = Vector2( 66.7419, 244.275 )
 shape = SubResource( 1 )
 
 [node name="to_east_stairs" type="Area2D" parent="."]
+position = Vector2( 600, 200 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_east_stairs"]
-position = Vector2( 563.301, 249.615 )
 shape = SubResource( 2 )
 
 [node name="to_vent" type="Area2D" parent="."]
+position = Vector2( 320, 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_vent"]
-position = Vector2( 547.283, 54.7283 )
 shape = SubResource( 3 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.878431 )
 [connection signal="input_event" from="to_west_stairs" to="." method="_on_to_west_stairs_input_event"]
 [connection signal="input_event" from="to_east_stairs" to="." method="_on_to_east_stairs_input_event"]
 [connection signal="input_event" from="to_vent" to="." method="_on_to_vent_input_event"]

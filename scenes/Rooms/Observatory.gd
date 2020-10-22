@@ -10,6 +10,8 @@ func _ready():
 	Sound.play_music()
 	Sound.stop_ambience()
 	flashlight.on_enter()
+	if Globals.vent_open:
+		_STATE_vent_open()
 
 func _on_to_west_stairs_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
@@ -30,7 +32,12 @@ func _on_to_vent_input_event(_viewport, _event, _shape_idx):
 		if Globals.has_sun:
 			flashlight.on_exit()
 			get_tree().change_scene(_engine)
-#		elif GameState.vent_open:
 		elif Globals.vent_open:
 			flashlight.on_exit()
 			get_tree().change_scene(_vent)
+		elif Globals.has_arm:
+			Globals.vent_open = true
+			_STATE_vent_open()
+
+func _STATE_vent_open():
+	$background_open.set_visible(true)

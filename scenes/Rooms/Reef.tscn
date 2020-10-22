@@ -1,12 +1,35 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/art/bgs/reef.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Rooms/Reef.gd" type="Script" id=2]
-[ext_resource path="res://assets/art/objects/diving_helm.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/objects/diver_reef_sheet.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/art/bgs/reef_foreground.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "monster fade"
+length = 7.33333
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.16667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 43 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 18.7161
+height = 37.3947
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 59.9025
+radius = 86.2007
+height = 0.0
 
 [node name="Reef" type="Node2D"]
 script = ExtResource( 2 )
@@ -15,21 +38,35 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="monster" type="Sprite" parent="."]
+[node name="monster" type="Area2D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="monster"]
+[node name="Sprite" type="Sprite" parent="monster"]
+texture = ExtResource( 3 )
+centered = false
+vframes = 11
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="monster/Sprite"]
+"anims/monster fade" = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="monster"]
+position = Vector2( 146.834, 190.285 )
+shape = SubResource( 3 )
+
+[node name="foreground" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
 
 [node name="ship" type="Area2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="ship"]
-position = Vector2( 329.705, 212.907 )
-texture = ExtResource( 3 )
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ship"]
-position = Vector2( 329.705, 212.907 )
+position = Vector2( 249.802, 199.472 )
+rotation = 0.457006
 scale = Vector2( 1, 0.56 )
 shape = SubResource( 1 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0.819608 )
+[connection signal="input_event" from="monster" to="." method="_on_monster_input_event"]
+[connection signal="animation_finished" from="monster/Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="input_event" from="ship" to="." method="_on_ship_input_event"]

@@ -15,6 +15,7 @@ onready var open_vent = $open_vent
 onready var test_click = $test_click
 onready var vault_open = $vault_open
 
+onready var rng = RandomNumberGenerator.new()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -66,6 +67,13 @@ func play_test_click():
 	
 func play_vault_open():
 	vault_open.play()
+
+func play_vent_move():
+	var _vent_move = vault_open
+	rng.randomize()
+	var _pitches = [0.95, 1, 1.05]
+	_vent_move.set_pitch_scale(_pitches[randi() % _pitches.size()])
+	_vent_move.play(.5)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
