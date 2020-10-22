@@ -10,4 +10,3 @@ var has_sun = false
 var has_power = false
 var has_eye = false
 var vault_open = false
-

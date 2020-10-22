@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/eyeball_squish_sfx.ogg-725481c399c5d79d590f1ce83efd5398.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/eyeball_squish_sfx.ogg"
+dest_files=[ "res://.import/eyeball_squish_sfx.ogg-725481c399c5d79d590f1ce83efd5398.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

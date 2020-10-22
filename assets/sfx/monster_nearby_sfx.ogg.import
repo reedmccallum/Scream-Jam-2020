@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/monster_nearby_sfx.ogg-7087fe5dc7c83a5c6948fa0e45f3ca28.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/monster_nearby_sfx.ogg"
+dest_files=[ "res://.import/monster_nearby_sfx.ogg-7087fe5dc7c83a5c6948fa0e45f3ca28.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

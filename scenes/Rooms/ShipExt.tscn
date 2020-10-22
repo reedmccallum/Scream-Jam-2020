@@ -23,5 +23,5 @@ scale = Vector2( 4.10676, -1.96893 )
 shape = SubResource( 1 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.901961 )
+modulate = Color( 1, 1, 1, 0.815686 )
 [connection signal="input_event" from="enter_ship" to="." method="_on_enter_ship_input_event"]
