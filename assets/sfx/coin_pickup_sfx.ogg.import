@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/coin_pickup_sfx.ogg-87c0be5f6049fa481e3e48a7f43f9eaf.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/coin_pickup_sfx.ogg"
+dest_files=[ "res://.import/coin_pickup_sfx.ogg-87c0be5f6049fa481e3e48a7f43f9eaf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

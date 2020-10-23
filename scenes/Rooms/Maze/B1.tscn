@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Rooms/Maze/B1.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/ui/back.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/bgs/7_vent.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 24 )
+
+[node name="Vent" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="to_left" type="Area2D" parent="."]
+position = Vector2( 80, 180 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="to_left"]
+polygon = PoolVector2Array( -80, -180, 60, -125, 60, 125, -80, 180 )
+
+[node name="back" type="Area2D" parent="."]
+position = Vector2( 616, 336 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="back"]
+texture = ExtResource( 2 )
+
+[node name="Flashlight" parent="." instance=ExtResource( 4 )]
+
+[node name="water" parent="." instance=ExtResource( 5 )]
+[connection signal="input_event" from="to_left" to="." method="_on_to_left_input_event"]
+[connection signal="input_event" from="back" to="." method="_on_back_input_event"]

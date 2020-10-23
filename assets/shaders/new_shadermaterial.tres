@@ -1,0 +1,49 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://assets/shaders/caust_001.png" type="Texture" id=1]
+[ext_resource path="res://assets/shaders/caust_014.png" type="Texture" id=2]
+[ext_resource path="res://assets/shaders/noise.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item; //canvas_item is for 2d elements//
+
+//in-out is given to you (returned automatically)--given to you automatically on the way in and returned on the way out (applied changes are automatically applied!)
+
+uniform sampler2D name : hint_albedo; //what the heckin fuckarino
+uniform sampler2D aberrate : hint_albedo;
+uniform sampler2D noise : hint_albedo;
+uniform float scroll_factor = 1.0;
+uniform float scroll_factor2 = 1.0;
+uniform float scroll_factor3 = 1.0;
+uniform float scroll_factor4 = 1.0;
+uniform float time_factor = 1.0;
+uniform vec2 amplitude = vec2(6.0, 4.0);
+
+void vertex() {
+	VERTEX.x += cos(TIME * time_factor + VERTEX.x + VERTEX.y) * amplitude.x + 1.0 * cos(TIME);
+	VERTEX.y += sin(TIME * time_factor + VERTEX.y + VERTEX.x) * amplitude.y + 1.0 * sin(TIME);
+}
+
+void fragment() {
+	
+	vec2 new_uv = vec2(scroll_factor * TIME + UV.x, scroll_factor2 * TIME + UV.y);
+	vec2 new_uv2 = vec2(scroll_factor3 * TIME + UV.x, scroll_factor4 * TIME + UV.y);
+	vec2 new_uv3 = vec2(scroll_factor * TIME + UV.x, scroll_factor4* TIME + UV.y);
+	vec4 noise_tex = texture(noise, new_uv3);
+	vec4 main_tex = texture(name, new_uv + 0.03 * noise_tex.xy);
+	vec4 liquidus_tex = texture(aberrate, new_uv2 + 0.3 * noise_tex.xy);
+	COLOR = main_tex + 0.8 * liquidus_tex;
+	
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/scroll_factor = 0.01
+shader_param/scroll_factor2 = 0.05
+shader_param/scroll_factor3 = 0.01
+shader_param/scroll_factor4 = -0.05
+shader_param/time_factor = 0.001
+shader_param/amplitude = Vector2( 6, 4 )
+shader_param/name = ExtResource( 1 )
+shader_param/aberrate = ExtResource( 2 )
+shader_param/noise = ExtResource( 3 )

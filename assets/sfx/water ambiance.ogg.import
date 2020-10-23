@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/water ambiance.ogg-2bde1b9181f4290fee70f1cfb25e3a37.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/water ambiance.ogg"
+dest_files=[ "res://.import/water ambiance.ogg-2bde1b9181f4290fee70f1cfb25e3a37.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

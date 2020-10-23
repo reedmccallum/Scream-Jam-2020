@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Black Water"
+run/main_scene="res://scenes/TitleSequence.tscn"
+config/icon="res://assets/art/ui/diving_helm_ui.png"
+config/windows_native_icon="res://assets/art/ui/diving_helm_ui.ico"
+
+[autoload]
+
+GameState="res://global.gd"
+Globals="*res://Globals.tscn"
+Sound="*res://Sound.tscn"
+Cursor="*res://Cursor.tscn"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/fullscreen=true
+mouse_cursor/custom_image="res://assets/art/ui/reticle.png"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[input]
+
+toggle_fullscreen={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777254,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

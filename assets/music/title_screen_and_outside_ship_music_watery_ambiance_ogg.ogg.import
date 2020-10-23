@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/title_screen_and_outside_ship_music_watery_ambiance_ogg.ogg-05fad499279c174dbd872b0f6436b26b.oggstr"
+
+[deps]
+
+source_file="res://assets/music/title_screen_and_outside_ship_music_watery_ambiance_ogg.ogg"
+dest_files=[ "res://.import/title_screen_and_outside_ship_music_watery_ambiance_ogg.ogg-05fad499279c174dbd872b0f6436b26b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

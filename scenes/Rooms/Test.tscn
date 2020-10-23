@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Rooms/Test.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/bgs/test_bg.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Rooms/Portal.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Inventory/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Scene" type="Node"]
+script = ExtResource( 1 )
+
+[node name="test_background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Coin" parent="." instance=ExtResource( 4 )]
+position = Vector2( 531.265, 273.642 )
+rotation = 0.466542
+scale = Vector2( 0.523883, 0.523883 )
+
+[node name="Portal" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+position = Vector2( 72.0812, 201.56 )
+scale = Vector2( 7.29377, 13.3033 )
+shape = SubResource( 1 )
+
+[node name="Flashlight" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0.819608 )
+position = Vector2( 0, 0.133819 )
+
+[node name="water" parent="." instance=ExtResource( 6 )]
+[connection signal="input_event" from="Coin" to="." method="_on_Coin_input_event"]
+[connection signal="input_event" from="Portal" to="Portal" method="_on_Portal_input_event"]

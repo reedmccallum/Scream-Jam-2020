@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vault_door_shutting.ogg-4477b9af5c916367c44349c6c4063e60.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/vault_door_shutting.ogg"
+dest_files=[ "res://.import/vault_door_shutting.ogg-4477b9af5c916367c44349c6c4063e60.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
