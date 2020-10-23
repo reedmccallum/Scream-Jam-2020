@@ -13,6 +13,8 @@ func _ready():
 		$background_open.set_visible(true)
 	elif Globals.has_power:
 		$background_powered.set_visible(true)
+		$water.set_modulate(Color("#0f143a54"))
+	
 
 func _on_to_vault_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:

@@ -10,6 +10,8 @@ func _ready():
 	ghost_animation.play("Ghost")
 	if Globals.coin_given:
 		_STATE_coin_given()
+	if Globals.has_power:
+		$water.set_modulate(Color("#0f143a54"))
 
 func _on_to_lab_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:

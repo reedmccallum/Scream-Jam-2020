@@ -13,6 +13,8 @@ func _ready():
 	flashlight.on_enter()
 	if Globals.vent_open:
 		_STATE_vent_open()
+	if Globals.has_power:
+		$water.set_modulate(Color("#0f143a54"))
 
 func _on_to_west_stairs_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
