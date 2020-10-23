@@ -1,16 +1,34 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/art/bgs/4_vent.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/ui/back.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Rooms/Maze/H.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/ui/Flashlight.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/art/objects/vent_fire_sheet.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120, 100 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 24 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "fire"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 12 ]
+}
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 320, 180 )
@@ -23,6 +41,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="to_front" type="Area2D" parent="."]
+visible = false
 position = Vector2( 320, 180 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_front"]
@@ -58,13 +77,21 @@ texture = ExtResource( 2 )
 [node name="sun" type="Area2D" parent="."]
 position = Vector2( 320, 180 )
 
-[node name="Sprite" type="Sprite" parent="sun"]
-
-[node name="Light2D" type="Light2D" parent="sun/Sprite"]
+[node name="Light2D" type="Light2D" parent="sun"]
+visible = false
 texture = ExtResource( 4 )
 texture_scale = 10.0
 color = Color( 0.0784314, 0.733333, 0.137255, 0.643137 )
 energy = 3.0
+
+[node name="Sprite" type="Sprite" parent="sun"]
+texture = ExtResource( 6 )
+vframes = 4
+hframes = 4
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sun/Sprite"]
+anims/fire = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sun"]
 shape = SubResource( 3 )

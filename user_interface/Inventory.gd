@@ -1,16 +1,9 @@
 extends Node2D
 
-onready var coin = $Coin
-onready var arm = $Arm
-onready var sun = $Sun
-onready var eye = $Eye
-
-
 func _ready():
-	#var coin_node = get_node('Scene/Coin')
-	#coin_node.connect("coin_gathered", self, "_on_coin_gathered")
-	pass
+	$Sun/AnimationPlayer.play("fire")
 
-func _on_coin_gathered():
-	print("Updating inventory")
-	coin.set_visibility(true)
+func _on_Exit_input_event(_viewport, _event, _shape_idx):
+	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
+		get_tree().quit()
+	pass # Replace with function body.

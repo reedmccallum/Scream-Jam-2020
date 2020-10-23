@@ -12,7 +12,13 @@ onready var obscure = $Obscure
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Globals.has_power:
+		flashlight_off()
 	pass # Replace with function body.
+
+func flashlight_off():
+	obscure.set_visible(false)
+	light.set_visible(false)
 
 func _input(event):
 	if event is InputEventMouseMotion:

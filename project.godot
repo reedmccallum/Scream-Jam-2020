@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Scream Jam 2020"
+config/name="Black Water"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
@@ -31,6 +31,7 @@ window/size/width=640
 window/size/height=360
 window/size/resizable=false
 window/size/fullscreen=true
+mouse_cursor/custom_image="res://assets/art/ui/reticle.png"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 

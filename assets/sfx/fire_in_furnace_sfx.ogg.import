@@ -11,5 +11,5 @@ dest_files=[ "res://.import/fire_in_furnace_sfx.ogg-9218f1093a0624eccf037f5b052d
 
 [params]
 
-loop=false
-loop_offset=0
+loop=true
+loop_offset=2.0

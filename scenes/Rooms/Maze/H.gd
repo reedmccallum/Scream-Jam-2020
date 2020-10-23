@@ -9,13 +9,16 @@ func _ready():
 	Sound.play_vent_move()
 	$Flashlight.on_enter()
 	$Flashlight/Light.texture_scale *= 2
-	$Flashlight.set_visible(false)
+	$Flashlight.flashlight_off()
+	$sun/Sprite/AnimationPlayer.play("fire")
 	
 func _on_sun_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("sun gathered")
-		GameState.has_sun = true
+		Globals.has_sun = true
+		Sound.play_fire_pick()
 		$sun.set_visible(false)
+		$to_front.set_visible(true)
 	pass
 
 func _on_to_front_input_event(_viewport, _event, _shape_idx):

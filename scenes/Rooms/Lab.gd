@@ -5,7 +5,7 @@ onready var flashlight = $Flashlight
 
 func _ready():
 	flashlight.on_enter()
-#	if GameState.has_arm:
+	$backpod/AnimationPlayer.play("backpod")
 	if Globals.has_arm:
 		_STATE_has_arm()
 
