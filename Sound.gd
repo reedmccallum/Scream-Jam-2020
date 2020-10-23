@@ -39,8 +39,10 @@ func play_door_lock():
 	door_lock.play()
 func play_eye_squish():
 	eye_squish.play()
-func play_fire_furnace():
-	fire_furnace.play()
+func play_fire_furnace(_sec = 0):
+	fire_furnace.play(_sec)
+func stop_fire_furnace():
+	fire_furnace.stop()
 func play_fire_pick():
 	fire_pick.play()
 func play_monster_atk():

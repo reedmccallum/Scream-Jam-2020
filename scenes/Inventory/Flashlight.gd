@@ -20,6 +20,10 @@ func flashlight_off():
 	obscure.set_visible(false)
 	light.set_visible(false)
 
+func flashlight_on():
+	obscure.set_visible(true)
+	light.set_visible(true)
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		target = get_viewport().get_mouse_position()

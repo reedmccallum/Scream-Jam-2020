@@ -33,10 +33,12 @@ func _on_to_vent_input_event(_viewport, _event, _shape_idx):
 		print("portal clicked")
 		if Globals.has_sun:
 			flashlight.on_exit()
+			Sound.play_vent_move()
 			if get_tree().change_scene(_engine) != OK:
 				print("Error on scene change to %s" % _engine)
 		elif Globals.vent_open:
 			flashlight.on_exit()
+			Sound.play_vent_move()
 			if get_tree().change_scene(_vent) != OK:
 				print("Error on scene change to %s" % _vent)
 		elif Globals.has_arm:

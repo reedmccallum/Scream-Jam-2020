@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/art/bgs/reef_foreground.png" type="Texture" id=5]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "monster fade"
 length = 7.33333
 step = 0.166667
@@ -23,11 +23,11 @@ tracks/0/keys = {
 "values": [ 0, 43 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 18.7161
 height = 37.3947
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 86.2007
 height = 0.0
 
@@ -47,11 +47,11 @@ vframes = 11
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="monster/Sprite"]
-"anims/monster fade" = SubResource( 2 )
+"anims/monster fade" = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="monster"]
 position = Vector2( 146.834, 190.285 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="foreground" type="Sprite" parent="."]
 texture = ExtResource( 5 )
@@ -64,9 +64,10 @@ visible = false
 position = Vector2( 249.802, 199.472 )
 rotation = 0.457006
 scale = Vector2( 1, 0.56 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0.913725 )
 [connection signal="input_event" from="monster" to="." method="_on_monster_input_event"]
 [connection signal="animation_finished" from="monster/Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="input_event" from="ship" to="." method="_on_ship_input_event"]

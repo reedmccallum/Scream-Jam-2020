@@ -19,6 +19,7 @@ func _on_sun_input_event(_viewport, _event, _shape_idx):
 		Sound.play_fire_pick()
 		$sun.set_visible(false)
 		$to_front.set_visible(true)
+		$Flashlight.flashlight_on()
 	pass
 
 func _on_to_front_input_event(_viewport, _event, _shape_idx):

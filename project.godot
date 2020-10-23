@@ -22,9 +22,10 @@ config/windows_native_icon="res://assets/art/ui/diving_helm_ui.ico"
 
 [autoload]
 
-GameState="*res://global.gd"
+GameState="res://global.gd"
 Globals="*res://Globals.tscn"
 Sound="*res://Sound.tscn"
+Cursor="*res://Cursor.tscn"
 
 [display]
 

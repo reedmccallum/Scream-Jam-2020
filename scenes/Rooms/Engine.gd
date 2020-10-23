@@ -16,7 +16,7 @@ func _STATUS_has_power():
 	$engine_on/AnimationPlayer.play("pulse")
 	$Flashlight.flashlight_off()
 	if not Sound.fire_furnace.is_playing():
-		Sound.play_fire_furnace()
+		Sound.play_fire_furnace(2)
 	if not Globals.has_eye:
 		$eye.set_visible(true)
 		$eye/Sprite/AnimationPlayer.play("eye_float")
@@ -25,6 +25,7 @@ func _on_vent_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
 		flashlight.on_exit()
+		Sound.stop_fire_furnace()
 		Sound.play_vent_move()
 		if get_tree().change_scene(_observatory) != OK:
 			print("Error on scene change to %s" % _observatory)
