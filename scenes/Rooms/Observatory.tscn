@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Rooms/Observatory.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/bgs/observatory.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/art/bgs/observatory_vent_open.png" type="Texture" id=4]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40, 120 )
@@ -45,6 +46,10 @@ position = Vector2( 320, 40 )
 shape = SubResource( 3 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 3 )]
+
+[node name="water" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.0980392, 0.392157, 0.537255, 0.00784314 )
+position = Vector2( 322.93, 170.762 )
 [connection signal="input_event" from="to_west_stairs" to="." method="_on_to_west_stairs_input_event"]
 [connection signal="input_event" from="to_east_stairs" to="." method="_on_to_east_stairs_input_event"]
 [connection signal="input_event" from="to_vent" to="." method="_on_to_vent_input_event"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/art/bgs/4_vent.png" type="Texture" id=1]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Rooms/Maze/H.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/ui/Flashlight.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=5]
@@ -9,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120, 100 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "fire"
 length = 1.3
 loop = true
@@ -62,9 +63,12 @@ hframes = 4
 frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="sun/Sprite"]
-anims/fire = SubResource( 4 )
+anims/fire = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sun"]
 shape = SubResource( 3 )
+
+[node name="water" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0823529, 0.458824, 0.290196, 0.0588235 )
 [connection signal="input_event" from="to_front" to="." method="_on_to_front_input_event"]
 [connection signal="input_event" from="sun" to="." method="_on_sun_input_event"]

@@ -4,6 +4,7 @@ onready var _to_front = "res://scenes/Rooms/Engine.tscn"
 #onready var _to_left = "res://scenes/Rooms/Maze/B1.tscn"
 #onready var _to_right = "res://scenes/Rooms/Maze/B.tscn"
 onready var _to_back = "res://scenes/Rooms/Maze/G.tscn"
+onready var water_shade = $water
 
 func _ready():
 	Sound.play_vent_move()
@@ -17,6 +18,7 @@ func _on_sun_input_event(_viewport, _event, _shape_idx):
 		print("sun gathered")
 		Globals.has_sun = true
 		Sound.play_fire_pick()
+		water_shade.set_modulate(Color("#02155575"))
 		$sun.set_visible(false)
 		$to_front.set_visible(true)
 		$Flashlight.flashlight_on()

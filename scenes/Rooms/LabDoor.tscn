@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/art/objects/ghost_hands_want_coin_sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/bgs/lab_door_open.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/art/bgs/lab_door_closed.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/objects/ghost_head.png" type="Texture" id=7]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 180.0
@@ -107,6 +108,9 @@ shape = SubResource( 5 )
 texture = ExtResource( 4 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 5 )]
+
+[node name="water" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.0971985, 0.372674, 0.507813, 0.00784314 )
 [connection signal="input_event" from="to_lab" to="." method="_on_to_lab_input_event"]
 [connection signal="input_event" from="ghost_hand" to="." method="_on_ghost_hand_input_event"]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]

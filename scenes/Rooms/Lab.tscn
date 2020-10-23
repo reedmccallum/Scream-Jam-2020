@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Rooms/Lab.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/bgs/lab_inside.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/art/objects/lab_inside_arm.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/objects/lab_inside_frontpod.png" type="Texture" id=7]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "backpod"
@@ -73,5 +74,8 @@ shape = SubResource( 3 )
 texture = ExtResource( 4 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 5 )]
+
+[node name="water" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.121569, 0.537255, 0.741176, 0.00784314 )
 [connection signal="input_event" from="arm" to="." method="_on_arm_input_event"]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]

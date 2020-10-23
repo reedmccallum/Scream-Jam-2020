@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/shaders/new_shadermaterial.tres" type="Material" id=2]
 
 [node name="water" type="Sprite"]
-modulate = Color( 0.121569, 0.537255, 0.741176, 0.0156863 )
+modulate = Color( 0.0823529, 0.333333, 0.458824, 0.00784314 )
 material = ExtResource( 2 )
 position = Vector2( 322.136, 171.556 )
 scale = Vector2( 3, 2 )
