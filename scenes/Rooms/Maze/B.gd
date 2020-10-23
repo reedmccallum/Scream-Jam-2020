@@ -26,12 +26,6 @@ func _on_to_left_input_event(_viewport, _event, _shape_idx):
 			print("Error on scene change to %s" % _to_left)
 	pass
 
-func _on_to_right_input_event(_viewport, _event, _shape_idx):
-#	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
-#		print("portal clicked")
-#		get_tree().change_scene(_to_right)
-	pass
-
 func _on_back_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")

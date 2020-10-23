@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/art/bgs/reef.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Rooms/Reef.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/objects/diver_reef_sheet.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/art/bgs/reef_foreground.png" type="Texture" id=5]
-[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "monster fade"
@@ -69,8 +68,6 @@ shape = SubResource( 3 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.913725 )
-
-[node name="water" parent="." instance=ExtResource( 6 )]
 [connection signal="input_event" from="monster" to="." method="_on_monster_input_event"]
 [connection signal="animation_finished" from="monster/Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="input_event" from="ship" to="." method="_on_ship_input_event"]

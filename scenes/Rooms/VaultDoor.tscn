@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Rooms/VaultDoor.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/objects/vault_door_coin.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/art/bgs/vault_door_closed_unpowered.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/ui/back.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 71.9161, 72.003 )
@@ -71,8 +70,6 @@ texture = ExtResource( 6 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.823529 )
-
-[node name="water" parent="." instance=ExtResource( 8 )]
 [connection signal="input_event" from="screen" to="." method="_on_screen_input_event"]
 [connection signal="input_event" from="to_vault" to="." method="_on_to_vault_input_event"]
 [connection signal="input_event" from="coin" to="." method="_on_coin_input_event"]

@@ -1,12 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Rooms/Maze/B1.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/ui/back.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/bgs/7_vent.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 120, 100 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 24 )
@@ -18,25 +15,11 @@ script = ExtResource( 1 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="to_front" type="Area2D" parent="."]
-visible = false
-position = Vector2( 320, 180 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="to_front"]
-shape = SubResource( 1 )
-
 [node name="to_left" type="Area2D" parent="."]
 position = Vector2( 80, 180 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="to_left"]
 polygon = PoolVector2Array( -80, -180, 60, -125, 60, 125, -80, 180 )
-
-[node name="to_right" type="Area2D" parent="."]
-visible = false
-position = Vector2( 560, 180 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="to_right"]
-polygon = PoolVector2Array( -60, -125, 80, -180, 80, 180, -60, 125 )
 
 [node name="back" type="Area2D" parent="."]
 position = Vector2( 616, 336 )
@@ -48,7 +31,5 @@ shape = SubResource( 2 )
 texture = ExtResource( 2 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
-[connection signal="input_event" from="to_front" to="." method="_on_to_front_input_event"]
 [connection signal="input_event" from="to_left" to="." method="_on_to_left_input_event"]
-[connection signal="input_event" from="to_right" to="." method="_on_to_right_input_event"]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]

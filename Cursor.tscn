@@ -39,7 +39,7 @@ texture = ExtResource( 3 )
 visible = false
 texture = ExtResource( 2 )
 hframes = 4
-frame = 3
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="mouse/animated"]
 anims/interact = SubResource( 1 )

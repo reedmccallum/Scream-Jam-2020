@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Rooms/EastStairs.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/bgs/stairwell_east.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/ui/back.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 24 )
@@ -28,6 +27,4 @@ texture = ExtResource( 3 )
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0.772549 )
 position = Vector2( 0.707123, 0.707108 )
-
-[node name="water" parent="." instance=ExtResource( 5 )]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]

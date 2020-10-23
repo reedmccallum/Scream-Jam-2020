@@ -10,7 +10,7 @@
 extents = Vector2( 23.7597, 138.004 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 101.95, 136.743 )
+extents = Vector2( 94.4097, 88.4367 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24, 24 )
@@ -30,6 +30,7 @@ scale = Vector2( -4.86659, 0.620185 )
 shape = SubResource( 1 )
 
 [node name="to_vault_door" type="Area2D" parent="."]
+position = Vector2( 16.4814, -48.695 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_vault_door"]
 position = Vector2( 171.527, 136.153 )

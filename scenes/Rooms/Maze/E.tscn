@@ -24,13 +24,6 @@ position = Vector2( 320, 180 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_front"]
 shape = SubResource( 1 )
 
-[node name="to_left" type="Area2D" parent="."]
-visible = false
-position = Vector2( 80, 180 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="to_left"]
-polygon = PoolVector2Array( -80, -180, 60, -125, 60, 125, -80, 180 )
-
 [node name="to_right" type="Area2D" parent="."]
 position = Vector2( 560, 180 )
 
@@ -48,6 +41,5 @@ texture = ExtResource( 2 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
 [connection signal="input_event" from="to_front" to="." method="_on_to_front_input_event"]
-[connection signal="input_event" from="to_left" to="." method="_on_to_left_input_event"]
 [connection signal="input_event" from="to_right" to="." method="_on_to_right_input_event"]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]
