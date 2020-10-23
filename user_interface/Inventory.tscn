@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/art/ui/arm_ui.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/ui/quit_button.png" type="Texture" id=7]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "fire"
 length = 1.3
 loop = true
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ 0, 12 ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="UI" type="Control"]
 light_mask = 0
@@ -60,7 +60,7 @@ hframes = 4
 frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Inventory/Sun"]
-anims/fire = SubResource( 2 )
+anims/fire = SubResource( 1 )
 
 [node name="Eye" type="Sprite" parent="Inventory"]
 visible = false
@@ -80,5 +80,5 @@ light_mask = 0
 texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="input_event" from="Exit" to="Inventory" method="_on_Exit_input_event"]

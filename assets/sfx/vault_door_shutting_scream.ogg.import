@@ -11,5 +11,5 @@ dest_files=[ "res://.import/vault_door_shutting_scream.ogg-5a6f07ca23213169a3f39
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

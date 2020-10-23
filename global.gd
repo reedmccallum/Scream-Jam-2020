@@ -11,6 +11,14 @@ var has_power = false setget set_has_power
 var has_eye = false setget set_has_eye
 var vault_open = false setget set_vault_open
 
+var final_anim = false
+
+func hide_ui():
+	$UI.hide()
+
+func show_exit():
+	$UI.show_exit()
+
 func _init():
 	OS.min_window_size = OS.window_size
 	OS.max_window_size = OS.get_screen_size()
@@ -19,6 +27,8 @@ func _unhandled_input(_event):
 	if _event.is_action_pressed("toggle_fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen
 		get_tree().set_input_as_handled()
+	elif _event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
 
 func set_has_coin(_new_value):
 	$UI/Inventory/Coin.set_visible(true)
