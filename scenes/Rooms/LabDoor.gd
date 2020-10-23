@@ -23,6 +23,7 @@ func _on_ghost_hand_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("ghost hand clicked")
 		if Globals.has_coin:
+			Sound.play_vault_open(.5)
 			Sound.play_coin()
 			Globals.coin_given = true
 			_STATE_coin_given()

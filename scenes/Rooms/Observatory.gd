@@ -31,7 +31,6 @@ func _on_to_east_stairs_input_event(_viewport, _event, _shape_idx):
 func _on_to_vent_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:
 		print("portal clicked")
-#		if GameState.has_sun:
 		if Globals.has_sun:
 			flashlight.on_exit()
 			if get_tree().change_scene(_engine) != OK:

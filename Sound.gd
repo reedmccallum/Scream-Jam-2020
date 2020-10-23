@@ -51,10 +51,10 @@ func play_open_vent():
 	open_vent.play()
 func play_test_click():
 	test_click.play()
-func play_vault_open():
-	vault_open.play()
+func play_vault_open(_sec = 0):
+	vault_open.play(_sec)
 func play_vent_move():
-	var _vent_move = vault_open
+	var _vent_move = open_vent
 	rng.randomize()
 	var _pitches = [0.95, 1, 1.05]
 	_vent_move.set_pitch_scale(_pitches[randi() % _pitches.size()])

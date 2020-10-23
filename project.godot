@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Black Water"
 run/main_scene="res://scenes/Game.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/art/ui/diving_helm_ui.png"
+config/windows_native_icon="res://assets/art/ui/diving_helm_ui.ico"
 
 [autoload]
 
