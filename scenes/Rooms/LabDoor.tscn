@@ -71,7 +71,6 @@ visible = false
 position = Vector2( 320, 200 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_lab"]
-visible = false
 shape = SubResource( 1 )
 
 [node name="ghost_hand" type="Area2D" parent="."]
@@ -108,7 +107,6 @@ shape = SubResource( 5 )
 texture = ExtResource( 4 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 5 )]
-visible = false
 [connection signal="input_event" from="to_lab" to="." method="_on_to_lab_input_event"]
 [connection signal="input_event" from="ghost_hand" to="." method="_on_ghost_hand_input_event"]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]
