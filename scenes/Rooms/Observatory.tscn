@@ -46,6 +46,7 @@ position = Vector2( 320, 40 )
 shape = SubResource( 3 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 3 )]
+modulate = Color( 1, 1, 1, 0.768627 )
 
 [node name="water" parent="." instance=ExtResource( 5 )]
 modulate = Color( 0.0980392, 0.392157, 0.537255, 0.00784314 )

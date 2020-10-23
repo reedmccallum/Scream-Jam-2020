@@ -26,25 +26,28 @@ tracks/0/keys = {
 radius = 6.0
 
 [node name="Cursor" type="Node2D"]
-scale = Vector2( 0.8, 0.8 )
+light_mask = 0
 z_index = 11
 script = ExtResource( 1 )
 
 [node name="mouse" type="Area2D" parent="."]
+light_mask = 0
 
 [node name="normal" type="Sprite" parent="mouse"]
+light_mask = 0
 texture = ExtResource( 3 )
 
 [node name="animated" type="Sprite" parent="mouse"]
 visible = false
+light_mask = 0
 texture = ExtResource( 2 )
 hframes = 4
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="mouse/animated"]
 anims/interact = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouse"]
+light_mask = 0
 shape = SubResource( 2 )
 [connection signal="area_entered" from="mouse" to="." method="_on_mouse_area_entered"]
 [connection signal="area_exited" from="mouse" to="." method="_on_mouse_area_exited"]
