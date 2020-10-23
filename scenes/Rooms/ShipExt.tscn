@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Rooms/ShipExt.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/bgs/ship_exterior.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 51.2261, 35.9624 )
@@ -24,4 +25,6 @@ shape = SubResource( 1 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0.815686 )
+
+[node name="water" parent="." instance=ExtResource( 4 )]
 [connection signal="input_event" from="enter_ship" to="." method="_on_enter_ship_input_event"]
