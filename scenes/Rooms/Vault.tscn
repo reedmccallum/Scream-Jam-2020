@@ -13,7 +13,7 @@ extents = Vector2( 10, 19.4736 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "final_scene"
-length = 13.6667
+length = 14.5
 step = 0.166667
 tracks/0/type = "value"
 tracks/0/path = NodePath("../foreground_treasure:modulate")
@@ -120,6 +120,7 @@ anims/final_scene = SubResource( 3 )
 
 [node name="vault_door_shutting_scream" type="AudioStreamPlayer" parent="final_scene"]
 stream = ExtResource( 7 )
+volume_db = -7.0
 
 [node name="water" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.0784314, 0.227451, 0.329412, 0 )

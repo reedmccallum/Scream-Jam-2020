@@ -16,6 +16,7 @@ func _ready():
 		_STATE_final_anim()
 
 func _STATE_final_anim():
+	$back.hide()
 	$final_anim/final_anim.show()
 	$final_anim.play("final_anim")
 

@@ -37,7 +37,7 @@ extents = Vector2( 24, 24 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "final_anim"
-length = 17.3333
+length = 24.1667
 step = 0.166667
 tracks/0/type = "value"
 tracks/0/path = NodePath("final_anim/final_anim:frame")
@@ -46,10 +46,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 15 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.83333, 4.83333, 17 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 45, 135 ]
+"values": [ 45, 62, 62, 135 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("water:modulate")
@@ -75,7 +75,7 @@ tracks/2/keys = {
 "start_offset": 7.33,
 "stream": ExtResource( 10 )
 } ],
-"times": PoolRealArray( 2.83333 )
+"times": PoolRealArray( 5 )
 }
 
 [node name="Lab" type="Node2D"]
@@ -120,7 +120,7 @@ texture = ExtResource( 4 )
 [node name="Flashlight" parent="." instance=ExtResource( 5 )]
 
 [node name="water" parent="." instance=ExtResource( 8 )]
-modulate = Color( 0.121569, 0.537255, 0.741176, 0.00784314 )
+modulate = Color( 0.0784314, 0.227451, 0.329412, 0.0588235 )
 
 [node name="final_anim" type="AnimationPlayer" parent="."]
 anims/final_anim = SubResource( 4 )
@@ -130,11 +130,11 @@ texture = ExtResource( 9 )
 centered = false
 vframes = 34
 hframes = 4
-frame = 45
+frame = 135
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="final_anim"]
 stream = ExtResource( 10 )
-volume_db = -25.0
+volume_db = -12.0
 pitch_scale = 0.7
 [connection signal="input_event" from="arm" to="." method="_on_arm_input_event"]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]
