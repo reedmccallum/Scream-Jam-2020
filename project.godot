@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Black Waters"
-run/main_scene="res://scenes/Game.tscn"
+config/name="Black Water"
+run/main_scene="res://scenes/TitleSequence.tscn"
 config/icon="res://assets/art/ui/diving_helm_ui.png"
 config/windows_native_icon="res://assets/art/ui/diving_helm_ui.ico"
 

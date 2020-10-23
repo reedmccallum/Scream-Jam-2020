@@ -41,3 +41,4 @@ func _STATE_coin_given():
 	$ghost_head/AnimationPlayer.play("Ghost")
 	$background_open.set_visible(true)
 	$to_lab.set_visible(true)
+	$to_lab.set_monitorable(true)

@@ -96,6 +96,7 @@ anims/pulse = SubResource( 2 )
 [node name="eye" type="Area2D" parent="."]
 visible = false
 position = Vector2( 549, 301 )
+monitorable = false
 
 [node name="Sprite" type="Sprite" parent="eye"]
 texture = ExtResource( 9 )

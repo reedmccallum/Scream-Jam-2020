@@ -1,17 +1,52 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Rooms/Vault.gd" type="Script" id=2]
+[ext_resource path="res://assets/art/bgs/vault_inside.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/bgs/vault_inside_foreground_treasure.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/objects/vault_inside_finalscene_sheet.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/bgs/vault_inside_foreground_sand.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
-resource_name = "final"
+resource_name = "final_scene"
+length = 22.6667
 step = 0.166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 22.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 135 ]
+}
 
 [node name="Vault" type="Node2D"]
+script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 3 )
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/final = SubResource( 1 )
+[node name="foreground_treasure" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="foreground_sand" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 6 )
+centered = false
+
+[node name="final_scene" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+vframes = 34
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="final_scene"]
+anims/final_scene = SubResource( 1 )
 
 [node name="water" parent="." instance=ExtResource( 1 )]

@@ -45,6 +45,7 @@ texture = ExtResource( 3 )
 centered = false
 vframes = 11
 hframes = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="monster/Sprite"]
 "anims/monster fade" = SubResource( 1 )
@@ -59,6 +60,7 @@ centered = false
 
 [node name="ship" type="Area2D" parent="."]
 visible = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ship"]
 position = Vector2( 249.802, 199.472 )

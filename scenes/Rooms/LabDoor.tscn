@@ -70,6 +70,7 @@ centered = false
 [node name="to_lab" type="Area2D" parent="."]
 visible = false
 position = Vector2( 320, 200 )
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_lab"]
 shape = SubResource( 1 )

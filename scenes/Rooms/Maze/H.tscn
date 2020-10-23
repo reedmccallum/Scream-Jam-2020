@@ -40,6 +40,7 @@ centered = false
 [node name="to_front" type="Area2D" parent="."]
 visible = false
 position = Vector2( 320, 180 )
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_front"]
 shape = SubResource( 1 )

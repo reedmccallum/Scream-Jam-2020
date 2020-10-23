@@ -8,6 +8,7 @@ func _ready():
 	flashlight.on_enter()
 	if Globals.has_coin:
 		$coin.set_visible(false)
+		$coin.set_monitorable(false)
 	if Globals.vault_open:
 		$background_open.set_visible(true)
 	elif Globals.has_power:
@@ -27,6 +28,7 @@ func _on_screen_input_event(_viewport, _event, _shape_idx):
 		print("screen clicked")
 		if Globals.has_power:
 			Globals.vault_open = true
+			$screen.set_monitorable(false)
 			Sound.play_vault_open()
 			$background_open.set_visible(true)
 
@@ -36,6 +38,7 @@ func _on_coin_input_event(_viewport, _event, _shape_idx):
 		print("coin gathered")
 		Sound.play_coin()
 		$coin.set_visible(false)
+		$coin.set_monitorable(false)
 
 func _on_back_input_event(_viewport, _event, _shape_idx):
 	if _event is InputEventMouseButton && _event.button_index == BUTTON_LEFT && _event.pressed:

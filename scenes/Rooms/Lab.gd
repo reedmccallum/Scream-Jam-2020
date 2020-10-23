@@ -21,8 +21,8 @@ func _on_arm_input_event(_viewport, _event, _shape_idx):
 		print("arm taken")
 		Sound.play_arm_break()
 		Globals.has_arm = true
-#		GameState.has_arm = true
 		_STATE_has_arm()
 
 func _STATE_has_arm():
 	$arm.set_visible(false)
+	$arm.set_monitorable(false)

@@ -13,6 +13,7 @@ func _ready():
 func _STATUS_has_power():
 	$background_light.set_visible(true)
 	$engine_off.set_visible(false)
+	$engine_off.set_monitorable(false)
 	$engine_on.set_visible(true)
 	$engine_on/AnimationPlayer.play("pulse")
 	$Flashlight.flashlight_off()
@@ -21,6 +22,7 @@ func _STATUS_has_power():
 		Sound.play_fire_furnace(2)
 	if not Globals.has_eye:
 		$eye.set_visible(true)
+		$eye.set_monitorable(true)
 		$eye/Sprite/AnimationPlayer.play("eye_float")
 
 func _on_vent_input_event(_viewport, _event, _shape_idx):
@@ -46,4 +48,5 @@ func _on_eye_input_event(_viewport, _event, _shape_idx):
 		Globals.has_eye = true
 		Sound.play_eye_squish()
 		$eye.set_visible(false)
+		$eye.set_monitorable(false)
 		

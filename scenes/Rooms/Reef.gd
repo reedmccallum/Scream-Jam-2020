@@ -19,10 +19,14 @@ func _on_monster_input_event(_viewport, _event, _shape_idx):
 		print("monster clicked")
 		$monster/Sprite/AnimationPlayer.play("monster fade")
 		Sound.play_monster_near()
+		Cursor.hide()
 		$monster/CollisionShape2D.set_visible(false)
 	pass # Replace with function body.
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	$monster.set_visible(false)
+	$monster.set_monitorable(false)
 	$ship.set_visible(true)
+	$ship.set_monitorable(true)
+	Cursor.show()
 	pass # Replace with function body.
