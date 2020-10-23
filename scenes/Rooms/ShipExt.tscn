@@ -27,4 +27,5 @@ shape = SubResource( 1 )
 modulate = Color( 1, 1, 1, 0.815686 )
 
 [node name="water" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.121569, 0.537255, 0.741176, 0.00784314 )
 [connection signal="input_event" from="enter_ship" to="." method="_on_enter_ship_input_event"]

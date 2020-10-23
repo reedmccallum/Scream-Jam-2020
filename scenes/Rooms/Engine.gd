@@ -2,6 +2,7 @@ extends Node2D
 
 onready var flashlight = $Flashlight
 onready var _observatory = "res://scenes/Rooms/Observatory.tscn"
+onready var water_shade = $water
 
 func _ready():
 	flashlight.on_enter()
@@ -15,6 +16,7 @@ func _STATUS_has_power():
 	$engine_on.set_visible(true)
 	$engine_on/AnimationPlayer.play("pulse")
 	$Flashlight.flashlight_off()
+	water_shade.set_modulate(Color("#0b14822d"))
 	if not Sound.fire_furnace.is_playing():
 		Sound.play_fire_furnace(2)
 	if not Globals.has_eye:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Rooms/Maze/G.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/ui/back.png" type="Texture" id=2]
+[ext_resource path="res://assets/shaders/water.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Inventory/Flashlight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/art/bgs/7_vent.png" type="Texture" id=5]
 
@@ -31,5 +32,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="Flashlight" parent="." instance=ExtResource( 4 )]
+
+[node name="water" parent="." instance=ExtResource( 3 )]
 [connection signal="input_event" from="to_left" to="." method="_on_to_left_input_event"]
 [connection signal="input_event" from="back" to="." method="_on_back_input_event"]
